@@ -28,18 +28,18 @@
         </div>
 
         <router-link
-          v-for="(route, index) in routes"
+          v-for="(route, index) in getRoutes"
           :key="index"
           :to="route.path"
-          >{{ route.meta.title }}</router-link
-        >
+          >{{ route.title }}</router-link>
       </nav>
     </Transition>
   </div>
 </template>
 
 <script>
-  import { ref } from "vue"
+  import { mapStores, mapState } from "pinia"
+  import useNavStore from "../stores/nav"
 
   export default {
     name: "Navmenu",
@@ -53,6 +53,11 @@
         isMenuOpen: true,
       }
     },
+
+    computed: {
+      ...mapStores(useNavStore),
+      ...mapState(useNavStore, ["getRoutes"])
+    }
   }
 </script>
 
