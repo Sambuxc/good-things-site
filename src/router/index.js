@@ -1,9 +1,18 @@
-import Home from "../views/Home.vue";
-import NotFound from "../views/NotFound.vue";
+import Home from "../views/Home.vue"
+import NotFound from "../views/NotFound.vue"
+import logo from "../assets/logo.png"
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
-  { path: "/", component: Home, meta: { title: "⚡Vite + ✔️Vue 3 + 🌻Tailwind CSS" } },
+  {
+    path: "/",
+    component: Home,
+    meta: {
+      title: "Good Things",
+      subtitle: "Foundation",
+      logo,
+    },
+  },
   {
     path: "/about",
     meta: { title: "About" },
@@ -14,4 +23,4 @@ export const routes = [
     component: () => import("../views/About.vue"),
   },
   { path: "/:path(.*)", component: NotFound },
-];
+]
