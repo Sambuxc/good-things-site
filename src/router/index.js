@@ -1,25 +1,36 @@
 import Home from "../views/Home.vue"
 import NotFound from "../views/NotFound.vue"
-import logo from "../assets/logo.png"
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
   {
     path: "/",
     component: Home,
-    meta: {
-      title: "Good Things",
-      subtitle: "Foundation",
-      logo,
-    },
+    meta: { title: "Home" },
   },
   {
-    path: "/about",
-    meta: { title: "About" },
-    // component: About,
-    // example of route level code-splitting
-    // this generates a separate chunk (About.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: "/whatwedo",
+    meta: { title: "What we do" },
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/digital",
+    meta: { title: "The digital divide" },
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/involve",
+    meta: { title: "Get in involved" },
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/network",
+    meta: { title: "Our network" },
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/insights",
+    meta: { title: "Insights" },
     component: () => import("../views/About.vue"),
   },
   { path: "/:path(.*)", component: NotFound },
