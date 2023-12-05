@@ -62,7 +62,7 @@
   }
 
   nav {
-    @apply absolute left-0 top-0 w-screen h-screen lg:relative lg:w-fit lg:h-fit flex flex-col items-center justify-center lg:flex-row gap-4 bg-white;
+    @apply absolute left-0 top-0 w-screen h-screen lg:relative lg:w-fit lg:h-fit flex flex-col items-center justify-center lg:flex-row gap-4 bg-white z-50;
 
     .btn-close {
       @apply absolute right-0 top-0 p-4 cursor-pointer lg:hidden;
